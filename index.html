@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Front Cromai</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><img src="calculator.png" width="180"/></div>
+        <div class="titulo"><h1>Calculadora</h1></div>
+    </div>
+    <section class="conteudo">
+        <div class="calculadora">
+            <form name="calc">
+                <fieldset>
+                    <input type="text" name="visor" id="visor"/>
+                    <input type="button" value="7" onclick="botao(value)"/>
+                    <input type="button" value="8" onclick="botao(value)"/>
+                    <input type="button" value="9" onclick="botao(value)"/>
+                    <input type="button" value="+" onclick="botao(value)"/>
+                    <input type="button" value="4" onclick="botao(value)"/>
+                    <input type="button" value="5" onclick="botao(value)"/>
+                    <input type="button" value="6" onclick="botao(value)"/>
+                    <input type="button" value="/" onclick="botao(value)"/>
+                    <input type="button" value="1" onclick="botao(value)"/>
+                    <input type="button" value="2" onclick="botao(value)"/>
+                    <input type="button" value="3" onclick="botao(value)"/>
+                    <input type="button" value="*" onclick="botao(value)"/>
+                    <input type="button" value="0" onclick="botao(value)"/>
+                    <input type="button" value="C" onclick="reset()"/>
+                    <input type="button" value="=" onclick="calcular()"/>
+                    <input type="button" value="-" onclick="botao(value)"/>
+                </fieldset>
+            </form>
+        </div>
+
+    </section>
+    <script>
+        function botao(Number){
+
+            var salvar =  document.calc.visor.value;
+            document.calc.visor.value = salvar + Number;
+
+        }
+        function reset(){
+            var apagar = document.calc.visor.value;
+            document.calc.visor.value = "";
+
+        }
+
+        function calcular(){
+            var num1 = parseInt(document.getElementById('visor').value);
+            var num2 = parseInt(document.getElementById('visor').value);
+            
+            var resultado = num1 + num2;
+            document.getElementById('visor').value = resultado ;
+             //var resultado = eval(parseInt(num1) + parseInt(num2));
+            
+        
+        }
+    </script>
+</body>
+</html>
