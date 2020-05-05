@@ -10,57 +10,61 @@
 <body>
     <div class="header">
         <div class="logo"><img src="calculator.png" width="180"/></div>
-        <div class="titulo"><h1>Calculadora</h1></div>
+        <div class="titulo">Calculadora</div>
     </div>
     <section class="conteudo">
         <div class="calculadora">
-            <form name="calc">
-                <fieldset>
-                    <input type="text" name="visor" id="visor"/>
-                    <input type="button" value="7" onclick="botao(value)"/>
-                    <input type="button" value="8" onclick="botao(value)"/>
-                    <input type="button" value="9" onclick="botao(value)"/>
-                    <input type="button" value="+" onclick="botao(value)"/>
-                    <input type="button" value="4" onclick="botao(value)"/>
-                    <input type="button" value="5" onclick="botao(value)"/>
-                    <input type="button" value="6" onclick="botao(value)"/>
-                    <input type="button" value="/" onclick="botao(value)"/>
-                    <input type="button" value="1" onclick="botao(value)"/>
-                    <input type="button" value="2" onclick="botao(value)"/>
-                    <input type="button" value="3" onclick="botao(value)"/>
-                    <input type="button" value="*" onclick="botao(value)"/>
-                    <input type="button" value="0" onclick="botao(value)"/>
-                    <input type="button" value="C" onclick="reset()"/>
-                    <input type="button" value="=" onclick="calcular()"/>
-                    <input type="button" value="-" onclick="botao(value)"/>
+                <fieldset >
+                    <input type="text" name="visor" id="visor" disabled="disable"/>
+                    <button  value="7" onclick="botao(value)">7</button>
+                    <button  value="8" onclick="botao(value)">8</button>
+                    <button  value="9" onclick="botao(value)">9</button>
+                    <button  value="+" onclick="botao(value)">+</buttom>
+                    <button  value="4" onclick="botao(value)">4</button>
+                    <button  value="5" onclick="botao(value)">5</button>
+                    <button  value="6" onclick="botao(value)">6</button>
+                    <button  value="/" onclick="botao(value)">/</button>
+                    <button  value="1" onclick="botao(value)">1</button>
+                    <button  value="2" onclick="botao(value)">2</button>
+                    <button  value="3" onclick="botao(value)">3</button>
+                    <button  value="*" onclick="botao(value)">X</button>
+                    <button  value="0" onclick="botao(value)">0</button>
+                    <button  value="C" onclick="reset()">C</button>
+                    <button  value="=" onclick="calcular(value)">=</button>
+                    <button  value="-" onclick="botao(value)">-</button>
                 </fieldset>
-            </form>
+            
         </div>
 
     </section>
+
+    <footer>
+        <div class="rodape">
+            <ul>
+                <li class="titfoot"><h4>Luiz Felippe Pucca Rodrigues</h4></li>
+                <li class="sociais"><img src="fb.png" width="40"/></li>
+                <li class="sociais"><img src="git.png" width="40"/></li>
+                <li class="sociais"><img src="linkedin.png" width="40"/></li>
+            </ul>
+        </div>
+    </footer>
     <script>
         function botao(Number){
-
-            var salvar =  document.calc.visor.value;
-            document.calc.visor.value = salvar + Number;
-
-        }
+            var salvar = document.getElementById('visor').value;
+            document.getElementById('visor').value = salvar + Number;
+            
+               }
         function reset(){
-            var apagar = document.calc.visor.value;
-            document.calc.visor.value = "";
-
+            var apagar =  document.getElementById('visor').value;
+            document.getElementById('visor').value = "";
+           
         }
 
-        function calcular(){
-            var num1 = parseInt(document.getElementById('visor').value);
-            var num2 = parseInt(document.getElementById('visor').value);
+        function calcular(value){
+            var resultado = eval(document.getElementById('visor').value);
             
-            var resultado = num1 + num2;
-            document.getElementById('visor').value = resultado ;
-             //var resultado = eval(parseInt(num1) + parseInt(num2));
-            
-        
-        }
+            document.getElementById('visor').value = resultado;
+ }
     </script>
 </body>
 </html>
